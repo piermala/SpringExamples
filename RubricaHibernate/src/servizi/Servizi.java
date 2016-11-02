@@ -1,0 +1,64 @@
+package servizi;
+
+import model.*;
+import dao.RubricaDao;
+import dao.VoceDao;
+
+public class Servizi {
+
+	RubricaDao rDao = new RubricaDao();
+	VoceDao vDao = new VoceDao();
+	
+	
+	/// AGGIUNGI RUBRICA
+	public Rubrica aggiungiRubrica(String nome){
+		Rubrica r = null;
+		r = rDao.aggiungiRubrica(nome);
+		
+		return r;
+	}
+	
+	/// AGGIUNGI VOCE
+	public Voce aggiungiVoce(String nome, String cognome, String telefono) {
+		Voce v = null;
+		v = vDao.aggiungiVoce(nome, cognome, telefono);
+
+		return v;
+	}
+	
+	
+	/// CERCA VOCE
+	public Voce cercaVoce(String nome, String cognome) {
+		Voce v = null;
+		v = vDao.cercaVoce(nome, cognome);
+
+		return v;
+	}
+	
+	
+	/// CERCA TELEFONO
+	public Voce cercaTelefono(String telefono) {
+		Voce v = null;
+		v = vDao.cercaTelefono(telefono);
+
+		return v;
+	}
+	
+	
+	/// MODIFICA VOCE
+	public boolean modificaVoce(Voce v1, Voce v2) {
+		boolean modificato = false;
+		modificato = vDao.modificaVoce(v1, v2);
+
+		return modificato;
+	}
+	
+	
+	/// ELIMINA VOCE
+	public boolean eliminaVoce(Voce v) {
+		boolean eliminato = false;
+		eliminato = vDao.eliminaVoce(v);
+
+		return eliminato;
+	}
+}
