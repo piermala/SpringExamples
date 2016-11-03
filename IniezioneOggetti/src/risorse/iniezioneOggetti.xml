@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="triangolo" class="com.pierangelo.iniezioneOggetti.Triangolo">
+		<property name="puntoA" ref="punto1"></property>
+		<property name="puntoB" ref="punto2"></property>
+		<property name="puntoC" ref="punto3"></property>	
+	</bean>
+	
+	
+	<bean id="punto1" class="com.pierangelo.iniezioneOggetti.Punto">
+		<property name="x" value="120"></property>
+		<property name="y" value="140"></property>
+	</bean>
+
+	<bean id="punto2" class="com.pierangelo.iniezioneOggetti.Punto">
+		<property name="x" value="150"></property>
+		<property name="y" value="130"></property>
+	</bean>
+
+
+	<bean id="punto3" class="com.pierangelo.iniezioneOggetti.Punto">
+		<property name="x" value="180"></property>
+		<property name="y" value="240"></property>
+	</bean>
+
+</beans>
