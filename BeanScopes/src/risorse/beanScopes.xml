@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<beans>
+
+
+  <bean id="secondoTriangolo" class="com.pierangelo.beanScopes.Triangolo" autowire="byName" scope="prototype" />
+  
+  
+     <bean id="puntoA" class="com.pierangelo.beanScopes.Punto">
+     	<property name="x" value="14"></property>
+     	<property name="y" value="16"></property>     
+     </bean>
+  
+  	 <bean id="puntoB" class="com.pierangelo.beanScopes.Punto">
+		<property name="x" value="21"></property>
+		<property name="y" value="17"></property>
+	 </bean>
+
+	 <bean id="puntoC" class="com.pierangelo.beanScopes.Punto">
+		<property name="x" value="19"></property>
+		<property name="y" value="20"></property>
+	 </bean>  
+	
+
+</beans>
