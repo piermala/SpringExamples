@@ -19,9 +19,9 @@ public class Servizi {
 	}
 	
 	/// AGGIUNGI VOCE
-	public Voce aggiungiVoce(String nome, String cognome, String telefono) {
+	public Voce aggiungiVoce(String nome, String cognome, String telefono, Rubrica rubrica) {
 		Voce v = null;
-		v = vDao.aggiungiVoce(nome, cognome, telefono);
+		v = vDao.aggiungiVoce(nome, cognome, telefono,rubrica);
 
 		return v;
 	}
@@ -46,9 +46,9 @@ public class Servizi {
 	
 	
 	/// MODIFICA VOCE
-	public boolean modificaVoce(Voce v1, Voce v2) {
+	public boolean modificaVoce(Voce v) {
 		boolean modificato = false;
-		modificato = vDao.modificaVoce(v1, v2);
+		modificato = vDao.modificaVoce(v);
 
 		return modificato;
 	}

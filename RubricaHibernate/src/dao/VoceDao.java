@@ -1,6 +1,7 @@
 package dao;
 
 import hibernateUtil.HibernateUtil;
+import model.Rubrica;
 import model.Voce;
 
 import org.hibernate.Session;
@@ -10,7 +11,7 @@ import org.hibernate.Query;
 public class VoceDao {
 
 	/// AGGIUNGI 
-	public Voce aggiungiVoce(String nome, String cognome, String telefono){
+	public Voce aggiungiVoce(String nome, String cognome, String telefono, Rubrica r){
 		Session session =HibernateUtil.openSession();
 		Transaction tx=null;
 		
@@ -20,7 +21,7 @@ public class VoceDao {
 		tx=session.getTransaction();
 		tx.begin();
 		
-		v = new Voce(nome,cognome,telefono);
+		v = new Voce(nome,cognome,telefono, r);
 		
 		session.persist(v);
 		 tx.commit();
@@ -89,7 +90,7 @@ public class VoceDao {
 	
 	
 	/// MODIFICA
-	public boolean modificaVoce(Voce v1, Voce v2){
+	public boolean modificaVoce(Voce v){
 		Session session =HibernateUtil.openSession();
 		Transaction tx=null;
 		
@@ -99,19 +100,21 @@ public class VoceDao {
 		tx=session.getTransaction();
 		tx.begin();
 		
-		Query query = session.createQuery("update Voce set nome=:nome1, cognome=:cognome1, telefono=:telefono1 where nome=:nome2, cognome=:cognome2, telefono=:telefono2");
-		query.setParameter("nome1", v1.getNome());
-		query.setParameter("cognome1", v1.getCognome());
-		query.setParameter("telefono1", v1.getTelefono());
-		query.setParameter("nome2", v2.getNome());
-		query.setParameter("cognome2", v2.getCognome());
-		query.setParameter("telefono2", v2.getTelefono());
+		/*Query query = session.createQuery("UPDATE VOCE SET nome=:nome1, cognome=:cognome1, telefono=:telefono1 WHERE nome=:nome2, cognome=:cognome2, telefono=:telefono2");
+		query.setString("nome1", v1.getNome());
+		query.setString("cognome1", v1.getCognome());
+		query.setString("telefono1", v1.getTelefono());
+		query.setString("nome2", v2.getNome());
+		query.setString("cognome2", v2.getCognome());
+		query.setString("telefono2", v2.getTelefono());
 		
-		int result = query.executeUpdate();
+		query.uniqueResult();*/
 		
-		if (result > 0){
+		/*if (result > 1){
 			modificato = true;
-		}
+		}*/		
+		session.update(v);
+		modificato = true;
 		
 		 tx.commit();
 		}catch(Exception ex){

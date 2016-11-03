@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<!--     creazione bean /  -->
+    
+    
+   <!--   <bean id="punto1"   class="com.pierangelo.autowire.Punto"> 
+        
+							<constructor-arg   index="0" value="17"/> 
+                              <constructor-arg   index="1" value="13"/> 
+    </bean> 
+    
+    
+    <bean id="punto2"   class="com.pierangelo.autowire.Punto"> 
+        
+							<constructor-arg   index="0" value="24"/> 
+                              <constructor-arg   index="1" value="14"/> 
+    </bean> 
+    
+    
+    <bean id="punto3"   class="com.pierangelo.autowire.Punto"> 
+        
+							<constructor-arg   index="0" value="27"/> 
+                              <constructor-arg   index="1" value="3"/> 
+    </bean> 
+    
+    
+    
+    <bean id="triangle"   class="com.pierangelo.autowire.Triangolo"> 
+        
+							<constructor-arg   index="0" value="#punto1"/> 
+                              <constructor-arg   index="1" value="#punto2"/> 
+                               <constructor-arg   index="2"  value="#punto3"/> 
+                               
+    </bean> -->
+    
+  
+  <import resource="risorse/autowire.xml"/>
+    
+
+         <!--      ****************iniezione delli oggetti ***********************************  -->
+<!--                      <import resource="risorseSpring/IniezioneDegliOggetti.xml"/> -->
+  
+<!--      ***************         Esempio InnerBean e Alias  *****************-->
+<!--                 <import resource="risorseSpring/InnerBeanAliases.xml"/> -->
+
+       <!--      ***************         Esempio Inizializzaione List  *****************-->
+<!--                       <import resource="risorseSpring/InizializzazioneList.xml"/> -->
+                   <!--      ***************         Esempio Autowire *****************-->     
+<!--                 <import resource="risorseSpring/autoWire.xml"/>  -->
+
+     <!--      ***************         Esempio scope dei bean *****************-->     
+<!--                 <import resource="risorseSpring/beanScopes.xml"/>  -->
+
+   <!--      ***************         Esempio ereditarieta  *****************--> 
+<!--                     <import resource="risorseSpring/EredirarietadelleDefinizioniDelBean.xml"/> -->
+                    
+                     <!--      ***************         Esempio PlaceHolder *****************--> 
+<!--                     <import resource="risorseSpring/BeanFactoryPostProcessor.xml"/> -->
+                    
+                         <!--      ***************         Esempio Interfaccia  *****************--> 
+                    <!--  <import resource="risorseSpring/ScrivereInterFaccia.xml"/>-->
+                    
+                    <!-- <import resource="src/Esempio.xml"/> -->
+                    
+                    
+                </beans>

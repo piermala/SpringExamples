@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Voce {
@@ -14,6 +15,9 @@ public class Voce {
 	private String nome;
 	private String cognome;
 	private String telefono;
+	
+	@ManyToOne
+	private Rubrica rubrica;
 	
 	
 	/// GETTERS AND SETTERS
@@ -36,6 +40,12 @@ public class Voce {
 		this.telefono = telefono;
 	}		
 	
+	public Rubrica getRubrica() {
+		return rubrica;
+	}
+	public void setRubrica(Rubrica rubrica) {
+		this.rubrica = rubrica;
+	}
 	public int getId_voce() {
 		return id_voce;
 	}
@@ -45,15 +55,23 @@ public class Voce {
 	
 	
 	/// CONSTRUCTORS
-	public Voce(String nome, String cognome, String telefono) {
+	public Voce(String nome, String cognome, String telefono, Rubrica r) {
 		super();
 		this.nome = nome;
 		this.cognome = cognome;
 		this.telefono = telefono;
+		this.rubrica = r;
 	}
 	
 	public Voce(){
 		
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Voce  -  nome=" + nome + ", cognome="
+				+ cognome + ", telefono=" + telefono;
 	}
 	
 	
